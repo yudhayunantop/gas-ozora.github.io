@@ -1,51 +1,37 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+// Include librari phpmailer
+include('phpmailer/Exception.php');
+include('phpmailer/PHPMailer.php');
+include('phpmailer/SMTP.php');
 
-  // Replace contact@example.com with your real receiving email address
+$email_penerima = "info@gas-ozora.com";   // Ambil email penerima dari inputan form
+$email_pengirim = $_POST['email']; // Isikan dengan email pengirim
+$nama_pengirim = $_POST['name']; // Isikan dengan nama pengirim
+$subjek = $_POST['subject']; // Ambil subjek dari inputan form
+$pesan = $_POST['message']; // Ambil pesan dari inputan form
 
-  ini_set( 'display_errors', 1 );   
-  error_reporting( E_ALL );    
-      
-  echo "Pesan email sudah terkirim.";
-  
+//$mail = new PHPMailer;
+//$mail->isSMTP();
+//$mail->Host = 'smtp.gmail.com';
+//$mail->Username = $email_pengirim; // Email Pengirim
+//$mail->Password = 'password_akun_email_pengirim'; // Isikan dengan Password email pengirim
+//$mail->Port = 465;
+//$mail->SMTPAuth = true;
+//$mail->SMTPSecure = 'ssl';
 
-  $from = "info@gas-ozora.com";    
-  //$receiving_email_address = 'info@gas-ozora.com';
-  
-  // if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    //   include( $php_email_form );
-    // } else {
-      //   die( 'Unable to load the "PHP Email Form" Library!');
-      // }
-  $to = $_POST['email'];   
-  $subject = $_POST['subject'];  
-  $message = "PHP mail berjalan dengan baik";   
-  $headers = "From:" . $from; 
+// $mail->SMTPDebug = 2; // Aktifkan untuk melakukan debugging
+$mail->setFrom($email_pengirim, $nama_pengirim);
+$mail->addAddress($email_penerima, '');
 
-  //$contact = new PHP_Email_Form;
-  //$contact->ajax = true;
-  //
-  //$contact->to = $receiving_email_address;
-  //$contact->from_name = $_POST['name'];
-  //$contact->from_email = $_POST['email'];
-  //$contact->subject = $_POST['subject'];
+if(empty($attachment)){ // Jika tanpa attachment
+    $send = $mail->send();
+    if($send){ // Jika Email berhasil dikirim
+        echo "<h1>Email berhasil dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
+    }else{ // Jika Email gagal dikirim
+        echo "<h1>Email gagal dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
+        // echo '<h1>ERROR<br /><small>Error while sending email: '.$mail->getError().'</small></h1>'; // Aktifkan untuk mengetahui error message
+    }
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  // $contact->smtp = array(
-  //   'host' => 'gas-ozora.com',
-  //   'username' => 'info',
-  //   'password' => 'k+TY5hD[[Ltp',
-  //   'port' => '465'
-  // );
-
-  //$contact->add_message( $_POST['name'], 'From');
-  //$contact->add_message( $_POST['email'], 'Email');
-  //$contact->add_message( $_POST['message'], 'Message', 10);
-
-  mail($to,$subject,$message, $headers);
 ?>
