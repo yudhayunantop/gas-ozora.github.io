@@ -28,8 +28,8 @@ $mail->addAddress($email_penerima, '');
 $send = $mail->send();
 
 if($send){ // Jika Email berhasil dikirim
-    header('Location: http://www.gas-ozora.com/');
+    header('Location: https://www.gas-ozora.com/');
 }else{ // Jika Email gagal dikirim
-    echo "<h1>Email gagal dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
+    echo "<h1>Email gagal dikirim</h1>
 
 ?>
