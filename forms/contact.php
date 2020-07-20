@@ -28,12 +28,4 @@ $mail->setFrom($email_pengirim, $nama_pengirim);
 $mail->addAddress($email_penerima, '');
 $send = $mail->send();
 
-// if(empty($attachment)){ // Jika tanpa attachment
-//     if($send){ // Jika Email berhasil dikirim
-//         echo "<h1>Email berhasil dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
-//     }else{ // Jika Email gagal dikirim
-//         echo "<h1>Email gagal dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
-//         // echo '<h1>ERROR<br /><small>Error while sending email: '.$mail->getError().'</small></h1>'; // Aktifkan untuk mengetahui error message
-//     }
-
 ?>
