@@ -27,9 +27,9 @@ $mail->setFrom($email_pengirim, $nama_pengirim);
 $mail->addAddress($email_penerima, '');
 $send = $mail->send();
 
-if($send){ // Jika Email berhasil dikirim
-    header('Location: https://www.gas-ozora.com/');
-}else{ // Jika Email gagal dikirim
-    echo "<h1>Email gagal dikirim</h1>
+// if($send){ // Jika Email berhasil dikirim
+//     header('Location: https://www.gas-ozora.com/');
+// }else{ // Jika Email gagal dikirim
+//     echo "<h1>Email gagal dikirim</h1>
 
 ?>
