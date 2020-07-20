@@ -7,7 +7,6 @@ include('phpmailer/PHPMailer.php');
 include('phpmailer/SMTP.php');
 
 $email_pengirim = 'ozoragas@gmail.com'; // Isikan dengan email pengirim
-$nama_pengirim = $_POST['email'];
 $email_penerima = "info@gas-ozora.com";   // Ambil email penerima dari inputan form
 $nama_pengirim = $_POST['email']; // Isikan dengan nama pengirim
 $subjek = $_POST['subject']; // Ambil subjek dari inputan form
