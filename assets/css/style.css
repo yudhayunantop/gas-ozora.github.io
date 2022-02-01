@@ -5,6 +5,11 @@
 * License: https://bootstrapmade.com/license/
 */
 
+.circle{
+  border-radius: 50%;
+  width: 300px;
+  margin-left: 25%;
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -320,7 +325,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/hero-background.jpg") top center;
+  background: url("../img/carbon.png") top center;
   background-size: cover;
   position: relative;
   margin-bottom: -80px;
@@ -501,7 +506,7 @@ section {
 # Call To Action
 --------------------------------------------------------------*/
 .call-to-action {
-  background: linear-gradient(rgba(1, 41, 42, 0.5), rgba(7, 56, 57, 0.5)), url("../img/call-to-action-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(1, 41, 42, 0.5), rgba(7, 56, 57, 0.5)), url("../img/carbon.png") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -573,10 +578,11 @@ section {
   margin-right: 0;
 }
 
+/* EDIT */
 .portfolio .portfolio-item {
   background: #073839;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 150px;
   position: relative;
   border-radius: 4px;
   margin: 0 0 30px 0;

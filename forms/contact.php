@@ -6,8 +6,8 @@ include('phpmailer/Exception.php');
 include('phpmailer/PHPMailer.php');
 include('phpmailer/SMTP.php');
 
-$email_pengirim = 'ozoragas@gmail.com'; // Isikan dengan email pengirim
-$email_penerima = 'info@gas-ozora.com';   // Ambil email penerima dari inputan form
+$email_pengirim = 'saladinalyubbi@gmail.com'; // Isikan dengan email pengirim
+$email_penerima = 'yudha.yunanto.2010@gmail.com';   // Ambil email penerima dari inputan form
 $nama_pengirim = $_POST['email']; // Isikan dengan nama pengirim
 $subjek = $_POST['subject']; // Ambil subjek dari inputan form
 $pesan = $_POST['message']; // Ambil pesan dari inputan form
@@ -17,7 +17,7 @@ $mail->isSMTP();
 
 $mail->Host = 'smtp.gmail.com';
 $mail->Username = $email_pengirim; // Email Pengirim
-$mail->Password = 'yudha30052000'; // Isikan dengan Password email pengirim
+$mail->Password = 'yudha77278249'; // Isikan dengan Password email pengirim
 $mail->Port = 465;
 $mail->SMTPAuth = true;
 $mail->SMTPSecure = 'ssl';
